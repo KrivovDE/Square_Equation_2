@@ -1,13 +1,24 @@
 {% extends "base.html" %}
 {% block title %} START {% endblock %}
 {% block content %}
-<form method="POST" action="{% url 'finish' %}">
+{% if request.method == 'GET' %}
+    <form method="POST" action="{% url 'start' %}">
     {% csrf_token %}
-    <div class="form-group" id="div-home">
-        {{ form }}
-        <input type="reset" name="" value="Очистить"><br><br>
-    </div><br>
-    <button type="submit" class="btn btn-primary" id="button-home">Узнать ответ</button>
-</form>
+        <div class="form-group" id="div-home">
+            {{ form }}
+            <input type="reset" name="" value="Очистить"><br><br>
+        </div><br>
+        <button type="submit" class="btn btn-primary" id="button-home">Узнать ответ</button>
+    </form>
+{% else %}
+    <h2>Указанное значение a = {{ a }}</h2>
+    <h2>Указанное значение b = {{ b }}</h2>
+    <h2>Указанное значение c = {{ c }}</h2><br>
+    <h1>Дискримант D = {{ D }}</h1>
+    <h4>ОТВЕТ:<br>{{ x1 }}<br>{{ x2 }}{{ x3 }}{{ x4 }}{{ x }}</h4>
+    <form action="{% url 'start' %}">
+        <input type="submit" value="Вернуться"><br><br>
+    </form>
+{% endif %}
 {% endblock %}
 
