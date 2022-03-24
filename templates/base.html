@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %} BASE {% endblock %}</title>
+</head>
+<style> body {background: bisque;} </style>
+<body>
+	<div class="container">
+        <h1>Тестовые задания Python-программисту</h1>
+    </div>
+    <div class="container">
+        <h3>Напишите сервис, который будет находить корни квадратного уравнения вида</h3>
+        <h1>ax<sup><small>2</small></sup>  + bx + c = 0</h1>
+        <h3>Самостоятельно определите наиболее оптимальную структуру возвращаемых данных.<br>
+            В качестве входных данных в сервис передаются значения a, b, c.</h3><br><br>
+    </div>
+    <div class="container">
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
+</html>

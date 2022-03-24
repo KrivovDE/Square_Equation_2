@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block title %} START {% endblock %}
+{% block content %}
+<form method="POST" action="{% url 'finish' %}">
+    {% csrf_token %}
+    <div class="form-group" id="div-home">
+        {{ form }}
+        <input type="reset" name="" value="Очистить"><br><br>
+    </div><br>
+    <button type="submit" class="btn btn-primary" id="button-home">Узнать ответ</button>
+</form>
+{% endblock %}
+

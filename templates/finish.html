@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %} FINISH {% endblock %}
+{% block content %}
+    <h2>Указанное значение a = {{ a }}</h2>
+    <h2>Указанное значение b = {{ b }}</h2>
+    <h2>Указанное значение c = {{ c }}</h2><br>
+    <h1>Дискримант D = {{ D }}</h1>
+    <h4>ОТВЕТ:<br>{{ x1 }}<br>{{ x2 }}{{ x3 }}{{ x4 }}{{ x }}</h4>
+    <form action="{% url 'start' %}">
+        <input type="submit" value="Вернуться"><br><br>
+    </form>
+{% endblock %}
+
+
